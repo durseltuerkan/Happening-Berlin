@@ -1,0 +1,433 @@
+/* Allgemeine Navbar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+nav ul {
+  position: fixed; /* Fixiert die Navigation oben */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(184, 169, 86);
+  color: white;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 20px;
+}
+
+/* Menü und Dropdown */
+.menu {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  position: relative;
+  font-weight: bold;
+  list-style: none;
+}
+
+.menu a, 
+.category-link {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.menu a:hover, 
+.category-link:hover {
+  background-color: white;
+  color: grey;
+}
+
+/* Submenu Styling (Dropdown für Kategorien) */
+.submenu {
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 10px;
+  position: absolute; /* Fixiert das Dropdown direkt unter dem Kategorien-Link */
+  top: 100%; /* Positioniert es direkt unter dem Link */
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 180px; /* Definiert eine feste Breite für das Dropdown */
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.submenu li {
+  font-size: 14px;
+}
+
+.submenu li a {
+  color: grey;
+  text-decoration: none;
+  padding: 10px 0;
+  display: block;
+}
+
+.submenu li a:hover {
+  background-color: #ddc070;
+}
+
+/* Mobile Ansicht */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #333;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    padding: 20px 10px;
+    border-top: 1px solid #555;
+  }
+
+  .menu.open {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+  .event-list {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Kleinere Karten für Mobilgeräte */
+  }
+
+  .container-list {
+    padding: 20px 10px;
+  }
+
+  .event-card {
+    padding: 16px;
+  }
+  .event-details {
+    padding: 15px;
+  }
+
+  .event-details h2 {
+    font-size: 1.8rem;
+  }
+
+  .event-details p {
+    font-size: 1rem;
+  }
+
+  .event-details button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+  form {
+    width: 90%;
+    padding: 15px;
+  }
+
+  label {
+    font-size: 0.9rem;
+  }
+
+  input,
+  textarea {
+    font-size: 0.9rem;
+  }
+
+  form button {
+    font-size: 0.9rem;
+  }
+}
+
+/* Homepage Styles */
+.homepage {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+  opacity: 0.85; /* Etwas weniger Transparenz für bessere Lesbarkeit */
+  background-image: url(images/berlineventbg.webp);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.homepage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Etwas weniger dunkler Overlay */
+  z-index: 1;
+}
+
+.homepage-content {
+  position: relative;
+  z-index: 2; 
+  color: white; 
+  text-align: center;
+  padding: 150px;
+}
+
+.homepage h1 {
+  font-size: 3rem; 
+  font-weight: bold;
+  text-transform: uppercase; 
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+  /* background-color: rgba(0, 0, 0, 0.6);  */
+  padding: 20px 40px; 
+  border-radius: 10px; 
+}
+
+.homepage p {
+  font-size: 1.5rem;
+  max-width: 600px; /* Begrenzung der Textbreite für bessere Lesbarkeit */
+  margin: 0 auto;
+  line-height: 1.5;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Schattierung auch für den Text */
+}
+.homepage-content button {
+  background-color: #e9c00a; 
+  margin-top: 20px;
+  color: white; 
+  padding: 12px 24px; 
+  border: none; 
+  border-radius: 5px;
+  font-size: 16px; 
+  cursor: pointer; 
+  transition: background-color 0.3s, transform 0.2s; 
+}
+
+.homepage-content button:hover {
+  background-color: grey; /* Dunklere Farbe beim Hover */
+  transform: scale(1.05); /* Leichtes Vergrößern beim Hover */
+}
+
+.homepage-content button:focus {
+  outline: none; /* Entfernt den Fokusrahmen */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Schattierung für den Fokus */
+}
+.event-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;  /* Stellt sicher, dass der Inhalt verteilt wird */
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  height: 500px;  /* Festgelegte Höhe für die Karte */
+}
+
+.event-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+  .event-card img {
+    width: 100%;
+    height: 60%;
+    object-fit: contain;  
+  }
+
+
+.event-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+  gap: 16px;
+  padding: 20px;
+  width: 100%;
+}
+
+.event-details {
+  max-width: 900px;
+  margin: 250px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.event-details h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.event-details img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.event-details p {
+  font-size: 1.1rem;
+  color: #555;
+  margin: 10px 0;
+}
+
+.event-details a {
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.event-details a:hover {
+  color: #0056b3;
+}
+
+.event-details button {
+  display: block;
+  background-color: #d9534f;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0 auto;
+  transition: background-color 0.3s ease;
+}
+
+.event-details button:hover {
+  background-color: #c9302c;
+}
+
+.event-details button:active {
+  background-color: #ac2925;
+}
+.link {
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.event-card img {
+  width: 100%;
+  height: 50%;
+  border-radius: 8px;
+}
+.container-list h1{
+  font-size: 36px;
+  margin-top: 100px;
+  text-align: center;
+  color: rgb(88, 78, 78);
+}
+.container-list{
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+  margin: 200px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Allgemeine Stilgebung für die Formularelemente */
+.form {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 8px;
+  display: block;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+}
+input[type="date"]{
+  width: 230px;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+form button {
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+form button:active {
+  background-color: #004085;
+}
+.new-event{
+  background-image: url(images/newevents.webp);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  
+}
+.new-event h2 {
+  margin-top: 120px;
+  font-size: 2rem;
+  color: white; 
+  background-color: rgba(0, 0, 0, 0.5); /* Halbtransparenter Hintergrund */
+  padding: 10px 20px; 
+  border-radius: 5px; 
+  text-align: center; 
+}
