@@ -5,6 +5,8 @@ import CreateEvent from "./pages/CreateEvent"
 import Home from "./pages/Home"
 import NavBar from "./components/NavBar"
 import CategoryPage from "./pages/CategoryPage"
+import NotFoundPage from "./pages/NotFoundPage"
+import FooterPage from "./pages/FooterPage"
 import "./App.css"
 function App() {
 
@@ -13,13 +15,17 @@ function App() {
   return (
     <BrowserRouter>
     <NavBar />
+    <main>
      <Routes>
      <Route index element= {<Home />}/>
      <Route path ="/event/:id" element = {<EventDetails /> }/>
      <Route path="/list" element= {<EventList />} />
      <Route path="/category/:category" element={<CategoryPage />} />
      <Route path="/new" element= {<CreateEvent />}/>
-      </Routes> 
+     <Route path="*" element= {<NotFoundPage />} />
+     </Routes> 
+    </main>
+    <FooterPage />
       
     </BrowserRouter>
   )

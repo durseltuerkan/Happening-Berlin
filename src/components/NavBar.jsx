@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Outlet, NavLink } from "react-router-dom";
-import { FaAngleDown } from "react-icons/fa"; // Beispiel für das Dropdown-Icon
+import { FaAngleDown } from "react-icons/fa"; 
+import { RxHamburgerMenu } from "react-icons/rx";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,7 +23,7 @@ const NavBar = () => {
   return (
     <div className="navbar">
       <button className="menu-toggle" onClick={toggleMenu}>
-        ☰
+      <RxHamburgerMenu />
       </button>
       <nav className={`menu ${isMenuOpen ? "open" : ""}`}>
         <ul>

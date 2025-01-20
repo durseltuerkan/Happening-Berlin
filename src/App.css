@@ -1,13 +1,20 @@
-/* Allgemeine Navbar */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
-
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Die Seite füllt den ganzen Bildschirm */
+  margin: 0;
+}
+main {
+  flex: 1;
+}
 nav ul {
-  position: fixed; /* Fixiert die Navigation oben */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -88,30 +95,41 @@ nav ul {
     display: none;
     flex-direction: column;
     gap: 10px;
-    background-color: #333;
     position: absolute;
     top: 50px;
     left: 0;
     width: 100%;
     padding: 20px 10px;
-    border-top: 1px solid #555;
   }
-
-  .menu.open {
+ .menu.open {
     display: flex;
   }
-
   .menu-toggle {
     display: block;
+  }
+  .homepage-content {
+    padding: 50px 20px;
+  }
+
+  .homepage h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .homepage p {
+    font-size: 1.2rem;
+  }
+
+  .homepage-content button {
+    padding: 10px 20px;
+    font-size: 14px;
   }
   .event-list {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Kleinere Karten für Mobilgeräte */
   }
-
   .container-list {
     padding: 20px 10px;
   }
-
   .event-card {
     padding: 16px;
   }
@@ -148,6 +166,13 @@ nav ul {
   form button {
     font-size: 0.9rem;
   }
+  .footer .footer-content p {
+    font-size: 14px;
+  }
+
+  .footer .social-links a {
+    font-size: 12px;
+  }
 }
 
 /* Homepage Styles */
@@ -157,7 +182,7 @@ nav ul {
   overflow: hidden;
   height: 100vh;
   width: 100%;
-  opacity: 0.85; /* Etwas weniger Transparenz für bessere Lesbarkeit */
+  opacity: 0.85; 
   background-image: url(images/berlineventbg.webp);
   background-position: center;
   background-attachment: fixed;
@@ -430,4 +455,92 @@ form button:active {
   padding: 10px 20px; 
   border-radius: 5px; 
   text-align: center; 
+}
+/* NotFoundPage.css */
+
+.notfound-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.notfound-heading {
+  font-size: 6rem;
+  margin-bottom: 1rem;
+  color: #e9c00a;
+}
+
+.notfound-text {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.notfound-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.notfound-link:hover {
+  background-color: #0056b3;
+}
+.footer {
+  background-color: rgba(184, 169, 86, 0.466);
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 150px;
+  margin: 10px;
+}
+
+.footer-section h4 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 5px;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer-section ul li a:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  border-top: 1px solid #5f5e5e;
+  padding-top: 10px;
+  font-size: 0.9rem;
 }

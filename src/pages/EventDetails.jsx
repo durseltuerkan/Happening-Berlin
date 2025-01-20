@@ -4,7 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 
 const EventDetails = () => {
     const { id } = useParams();
-    const { events, fetchEvents, deleteEvent, loading, error } = useContext(EventContext);
+    const { events,setEvents, fetchEvents, deleteEvent, loading, error } = useContext(EventContext);
     const navigate = useNavigate();
 
     // Event finden
@@ -15,7 +15,7 @@ const EventDetails = () => {
         if (!event && !loading && !error) {
             fetchEvents();
         }
-    }, [event, fetchEvents, loading, error]);
+    }, [event, loading, error, fetchEvents]);
 
     if (loading) return <p>Lade Event-Details...</p>;
     if (error) return <p>Es gab ein Problem beim Abrufen des Events.</p>;
@@ -25,17 +25,21 @@ const EventDetails = () => {
     const handleDelete = () => {
         const confirmDelete = window.confirm("Möchtest du dieses Event wirklich löschen?");
         if (confirmDelete) {
-            deleteEvent(id); // Event aus dem Zustand löschen
-            navigate("/list"); // Nach dem Löschen zurück zur Event-Liste navigieren
+            deleteEvent(id); // Event aus dem Zustand löschen (falls nötig)
+            
+            // Aktualisiere den Zustand direkt
+            const updatedEvents = events.filter((event) => event.id !== id);
+            setEvents(updatedEvents); // Zustand sofort aktualisieren
+            
+            navigate("/list");
         }
     };
-
     return (
         <div className="event-details">
             <h2>{event.name}</h2>
             <img src={imageUrl} alt={event.name} />
             <p><strong>Datum:</strong> {event.dates.start.localDate}</p>
-            <p><strong>Ort:</strong> {event._embedded.venues[0].name}</p>
+            <p><strong>Ort:</strong> {event?._embedded?.venues?.[0]?.name || "Ort nicht verfügbar"}</p>
             <a href={event.url} target="_blank" rel="noopener noreferrer">Mehr Informationen</a>
             <button onClick={handleDelete}>Event löschen</button>
         </div>
