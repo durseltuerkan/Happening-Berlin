@@ -88,93 +88,6 @@ nav ul {
 .submenu li a:hover {
   background-color: #ddc070;
 }
-
-/* Mobile Ansicht */
-@media (max-width: 768px) {
-  .menu {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    position: absolute;
-    top: 50px;
-    left: 0;
-    width: 100%;
-    padding: 20px 10px;
-  }
- .menu.open {
-    display: flex;
-  }
-  .menu-toggle {
-    display: block;
-  }
-  .homepage-content {
-    padding: 50px 20px;
-  }
-
-  .homepage h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-  }
-
-  .homepage p {
-    font-size: 1.2rem;
-  }
-
-  .homepage-content button {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-  .event-list {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Kleinere Karten für Mobilgeräte */
-  }
-  .container-list {
-    padding: 20px 10px;
-  }
-  .event-card {
-    padding: 16px;
-  }
-  .event-details {
-    padding: 15px;
-  }
-
-  .event-details h2 {
-    font-size: 1.8rem;
-  }
-
-  .event-details p {
-    font-size: 1rem;
-  }
-
-  .event-details button {
-    padding: 8px 16px;
-    font-size: 14px;
-  }
-  form {
-    width: 90%;
-    padding: 15px;
-  }
-
-  label {
-    font-size: 0.9rem;
-  }
-
-  input,
-  textarea {
-    font-size: 0.9rem;
-  }
-
-  form button {
-    font-size: 0.9rem;
-  }
-  .footer .footer-content p {
-    font-size: 14px;
-  }
-
-  .footer .social-links a {
-    font-size: 12px;
-  }
-}
-
 /* Homepage Styles */
 .homepage {
   margin: 0;
@@ -229,7 +142,7 @@ nav ul {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Schattierung auch für den Text */
 }
 .homepage-content button {
-  background-color: #e9c00a; 
+  background-color: #383734; 
   margin-top: 20px;
   color: white; 
   padding: 12px 24px; 
@@ -241,7 +154,7 @@ nav ul {
 }
 
 .homepage-content button:hover {
-  background-color: grey; /* Dunklere Farbe beim Hover */
+  background-color: rgb(26, 23, 23); /* Dunklere Farbe beim Hover */
   transform: scale(1.05); /* Leichtes Vergrößern beim Hover */
 }
 
@@ -459,31 +372,38 @@ form button:active {
 /* NotFoundPage.css */
 
 .notfound-container {
+  background-image: url(images/notfound.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: scroll;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  padding: 20px;
   background-color: #f8f9fa;
   text-align: center;
+  overflow: hidden;
 }
 
 .notfound-heading {
   font-size: 6rem;
   margin-bottom: 1rem;
-  color: #e9c00a;
+  color: white;
 }
 
 .notfound-text {
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
-  color: #333;
+  color: grey;
 }
 
 .notfound-link {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: grey;
   color: white;
   text-decoration: none;
   border-radius: 5px;
@@ -492,7 +412,7 @@ form button:active {
 }
 
 .notfound-link:hover {
-  background-color: #0056b3;
+  background-color: #252627;
 }
 .footer {
   background-color: rgba(184, 169, 86, 0.466);
@@ -543,4 +463,102 @@ form button:active {
   border-top: 1px solid #5f5e5e;
   padding-top: 10px;
   font-size: 0.9rem;
+}
+/* Mobile Ansicht */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    padding: 20px 10px;
+  }
+ .menu.open {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+    width: 10%;
+    padding: 5px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    background-color: rgb(187, 170, 73);
+    color: white;
+  }
+  .homepage-content {
+    padding: 50px 20px;
+  }
+
+  .homepage h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .homepage p {
+    font-size: 1.2rem;
+  }
+
+  .homepage-content button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  .event-list {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Kleinere Karten für Mobilgeräte */
+  }
+  .container-list {
+    padding: 20px 10px;
+  }
+  .event-card {
+    padding: 16px;
+  }
+  .event-details {
+    padding: 15px;
+  }
+
+  .event-details h2 {
+    font-size: 1.8rem;
+  }
+
+  .event-details p {
+    font-size: 1rem;
+  }
+
+  .event-details button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+  form {
+    width: 90%;
+    padding: 15px;
+  }
+
+  label {
+    font-size: 0.9rem;
+  }
+
+  input,
+  textarea {
+    font-size: 0.9rem;
+  }
+
+  form button {
+    font-size: 0.9rem;
+  }
+  .footer .footer-content p {
+    font-size: 14px;
+  }
+
+  .footer .social-links a {
+    font-size: 12px;
+  }
+  .notfound-container {
+    background-size: cover; 
+    background-position: top center; 
+    padding: 10px; 
+  }
 }
