@@ -17,8 +17,8 @@ const EventDetails = () => {
         }
     }, [event, loading, error, fetchEvents]);
 
-    if (loading) return <p>Lade Event-Details...</p>;
-    if (error) return <p>Es gab ein Problem beim Abrufen des Events.</p>;
+    if (loading) return <p className="loading">Lade Event-Details...</p>;
+    if (error) return <p className="error">Es gab ein Problem beim Abrufen des Events.</p>;
     if (!event) return <p>Kein Event mit dieser ID gefunden.</p>;
 
     // Event löschen

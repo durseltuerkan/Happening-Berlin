@@ -6,7 +6,7 @@ const FooterPage = () => {
           <h4>Navigation</h4>
           <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/categories">Kategorien</a></li>
+            <li><a href="/category/music">Kategorien</a></li>
             <li><a href="/about">Über uns</a></li>
           </ul>
         </div>

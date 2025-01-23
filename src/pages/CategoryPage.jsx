@@ -14,7 +14,7 @@ const CategoryPage = () => {
   const segmentIds = {
     music: "KZFzniwnSyZfZ7v7nJ",
     sports: "KZFzniwnSyZfZ7v7nE",
-    artsandtheatre: "KZFzniwnSyZfZ7v7na", // Arts & Theatre Kategorie
+    artsandtheatre: "KZFzniwnSyZfZ7v7na"
   };
 
   const categoryNames = {

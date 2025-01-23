@@ -29,7 +29,7 @@ const EventForm = ({ onSubmit }) => {
       venue: "",
       description: "",
       imageUrl: "",
-    }); // Formular zurücksetzen
+    });
   };
 
   return (

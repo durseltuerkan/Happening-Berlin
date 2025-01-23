@@ -424,7 +424,7 @@ form button:active {
 
 .footer-content {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
   margin-bottom: 20px;
 }
@@ -481,8 +481,8 @@ form button:active {
   }
   .menu-toggle {
     display: block;
-    width: 10%;
-    padding: 5px;
+    width: 8%;
+    padding: 8px;
     margin: 5px 0;
     border: none;
     border-radius: 7px;
@@ -549,6 +549,10 @@ form button:active {
   form button {
     font-size: 0.9rem;
   }
+  /* .footer {
+    position: absolute;
+    bottom: 0;
+  } */
   .footer .footer-content p {
     font-size: 14px;
   }
@@ -561,4 +565,17 @@ form button:active {
     background-position: top center; 
     padding: 10px; 
   }
+}
+.error, .loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  height: 50vh;
+  font-size: 20px;
+  color: red;
+}
+.loading {
+  color: black;
 }
