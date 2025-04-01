@@ -13,6 +13,9 @@
   
 ## Screenshots 📸  
 ![EventPlaner Screenshot](assets/homepage.png)
+![EventPlaner Screenshot](assets/addEvent.png)
+![EventPlaner Screenshot](assets/list-of-events.png)
+
 
 ## Technologies Used 🛠️  
 
