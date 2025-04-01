@@ -18,7 +18,7 @@
 
 ## Technologies Used 🛠️  
 
-- **Frontend:** React, Next.js, CSS 
+- **Frontend:** React, CSS 
 - **Deployment:** Vercel  
 
 
