@@ -19,7 +19,15 @@
 ## Technologies Used 🛠️  
 
 - **Frontend:** React, CSS 
-- **Deployment:** Vercel  
+- **Deployment:** Vercel
+
+  ## Contact 📩  
+For any inquiries or feedback, feel free to reach out:  
+
+👤 **Dursel Türkan**  
+- GitHub: [@durseltuerkan](https://github.com/durseltuerkan)  
+- LinkedIn: [https://www.linkedin.com/in/dursel-tuerkan/](https://www.linkedin.com/in/dursel-tuerkan/) 
+- Email: durselturkan@gmail.com 
 
 
 
